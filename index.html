@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <meta name="keywords" content="minecraft,mc,servers,survival,rpg,contest,giveaway">
+
+    <meta name="author" content="Fre$h Daddy B // TheEmoChef">
+    <meta name="author:website" content="http://levelmc.com">
+    <meta name="template:version" content="v1.4">
+
+    <title>Level MC</title>
+    <meta name="description" content="Level up your play time.">
+    <link rel="icon" href="images/icon.png">
+
+    <!-- Bootstrap CSS-->
+    <link rel="stylesheet" href="core/bootstrap/css/bootstrap.min.css">
+    <!-- Template CSS -->
+    <link rel="stylesheet" href="core/style.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Russo+One&display=swap" rel="stylesheet">
+    <script src="core/fontawesome/js/all.js"></script>
+    <script>
+        let updatePlayerCount = function() {
+            let playerCountElement = $('#server-player-count');
+            $.getJSON("https://api.minetools.eu/ping/play.levelmc.com/25565", function (data) {
+                var onlinePlayers = data['players']['online'];
+                console.log(`${onlinePlayers} online as of page load.`);
+                playerCountElement.text(onlinePlayers);
+            });
+        };
+
+        window.addEventListener("load", function () {
+            updatePlayerCount();
+            setInterval(() => {
+                updatePlayerCount();
+            },5000)
+        });
+    </script>
+
+</head>
+<body>
+<!-- START - Navigation & Menu -->
+<nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="#">LevelMC.com</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbar">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html"><i class="fas fa-home"></i> HOME</a>
+                </li>
+                <li class="nav-item special">
+                    <a class="nav-link" href="http://store.levelmc.com"><i class="fas fa-store"></i> STORE</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="modal" data-target="#vote-modal"><i class="fas fa-vote-yea"></i>
+                        VOTE</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- END - Navigation & Menu -->
+
+<!-- START - Header -->
+<header class="main-header">
+    <div class="container h-100">
+        <div class="row h-100 align-items-center">
+            <div class="col-12 text-center">
+                <h1 class="font-weight-light main-font-big">LevelMC</h1>
+                <p class="main-font-small" id="server-ip">play.levelmc.com</p>
+                <div class="container server-status">
+                    <div class="alert alert-success text-center button-glow text-uppercase server-ip-copy" role="alert">
+                        <h4 class="alert-heading pulse animated serverIP">
+                            Play with <b><span server-ip="play.levelmc.com" id="server-player-count"><i
+                                class="fas fa-spinner fa-spin"></i></span></b>
+                            others on the server!<br>
+                            <small>(Click to copy ip server)</small>
+                        </h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- END - Header -->
+
+<!-- START - Session info -->
+<section class="main-session-info">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <h3 class="text-green title-h3">JOIN NOW,</h3>
+                <h1 class="my-4 multiple-shadow">WIN JUST BY PLAYING</h1>
+                <p>
+                    Right now we have a contest on our server where you win a Gucci Bag!
+                    Playing you have a few ways to win tickets
+                </p>
+
+                <div class="row">
+                    <div class="col-lg-6">
+                        <ul>
+                            <li>Hunt Monsters</li>
+                            <li>Mine Ores</li>
+                            <li>Vote for our server</li>
+                            <li>PLAY! (Random, <i>Literally</i>)</li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="row">
+                            <img class="img-thumbnail" src="images/raffle-preview.JPG">
+                        </div>
+                    </div>
+                </div>
+
+                <p>Each ticket has a number- We announce the winning ticket # and who has it in 1 month on <a
+                        href="http://www.twitter.com/FreshDaddyB">twitter</a>.</p>
+
+                <div class="row">
+                    <div class="col-lg-4">
+                        <!--                        TODO Implement countdown in javascript for 1 month -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <!--                Todo implement carousel-->
+                <img class="main-img-right" src="images/gucci-bag.jpg">
+            </div>
+        </div>
+    </div>
+</section>
+<section class="py-8 session-img">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <img class="main-img-left" src="images/owners.jpg">
+            </div>
+            <div class="col-lg-8">
+                <h3 class="text-green title-h3">Who are we?!</h3>
+                <p>
+                    We're the new ones on the block. Posted up with drip, and bringing new flavour to the game.
+                    First off we have our survival RPG server- Next, we're bringing out guns.
+                </p>
+
+                <p>If you want a place we got you, just come chill and have fun!</p>
+
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="text-center">
+                            <img class="rounded" src="https://minotar.net/avatar/TheEmoChef/125.png" alt="TheEmoChef"/>
+                            <p class="text-light">TheEmoChef <span class="badge badge-success">Server Owner</span></p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="text-center">
+                            <img class="rounded" src="https://minotar.net/avatar/CheesePoof/125.png" alt="CheesePoof"/>
+                            <p class="text-light">CheesePoof <span class="badge badge-success">Owner / Developer <span
+                                    class="small"><a href="https://distrokid.com/hyperfollow/frehdaddyb/project-hope">(Rapper)</a></span></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- END - Session info -->
+
+<!-- START - Footer -->
+<footer>
+    <div class="main-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h4>Helpful links</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://www.instagram.com/nicolem_besteverchef/">TheEmoChef Instagram</a></li>
+                        <li><a href="https://distrokid.com/hyperfollow/frehdaddyb/project-hope">Fre$h Daddy B - Project
+                            Hope</a></li>
+                    </ul>
+                </div>
+                <div class="offset-md-4 col-md-4">
+                    <h4>Information</h4>
+                    <p>We want a place you can call your own. Let's kick it.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        Copyright © 2020 LevelMC.com - All rights reserved.</span>
+    </div>
+</footer>
+<!-- END - Footer -->
+
+
+<!-- START - Vote Modal -->
+<div class="modal fade" id="vote-modal">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title text-green multiple-shadow"><i class="fas fa-vote-yea"></i> VOTE</h4>
+            </div>
+            <div class="modal-body">
+                <h2>
+                    <span class="text-green">Vote for the server!</span>
+                    <br>
+                    <small>And get a reward and other interesting benefits!</small>
+                </h2>
+                <br>
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <div class="input-group">
+                            <input type="text" class="form-control text-right" placeholder="Username">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" type="button">START VOTE</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END - Vote Modal -->
+
+<!-- Scripts -->
+<script src="core/jquery.min.js"></script>
+<script src="core/bootstrap/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+</body>
+</html>
