@@ -22,7 +22,7 @@
     <link href="https://fonts.googleapis.com/css?family=Russo+One&display=swap" rel="stylesheet">
     <script src="core/fontawesome/js/all.js"></script>
     <script>
-        let updatePlayerCount = function() {
+        let updatePlayerCount = function () {
             let playerCountElement = $('#server-player-count');
             $.getJSON("https://api.minetools.eu/ping/play.levelmc.com/25565", function (data) {
                 var onlinePlayers = data['players']['online'];
@@ -35,7 +35,7 @@
             updatePlayerCount();
             setInterval(() => {
                 updatePlayerCount();
-            },5000)
+            }, 5000)
         });
     </script>
 
